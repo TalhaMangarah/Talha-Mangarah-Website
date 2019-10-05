@@ -1,0 +1,164 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif !important;
+  background: #1f2123 !important;
+  color: white;
+  font-size: 16px;
+  line-height: 1.64;
+}
+
+.main {
+  width: 100%;
+  position: absolute;
+  min-height: 100%;
+
+  .header{
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.3);
+
+    .title {
+      padding-top: 0.8%;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .logo {
+      height: 100px;
+      width: 95px;
+    }
+
+    .blog{
+      width: auto;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 22px;
+      font-weight: bold;
+      .link:link{
+        color: #8F96FF;
+      }
+      .link:visited{
+        color: #8F96FF;
+      }
+      .link:hover{
+        color: white;
+        text-decoration: none;
+      }
+      .link:after{
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 100%;
+        position: relative;
+        background: #fff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .link:hover:after {
+        width: 66px;
+        left: 0;
+      }
+
+    }
+  }
+
+  .content{
+    background-color: #181A1B;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+    h2.about{
+      text-align: center;
+    }
+
+    hr.about{
+      border-top: 1px solid white;
+      width: inherit;
+    }
+
+    h2.eduexp{
+      text-align: center;
+    }
+
+    hr.eduexp{
+      border-top: 1px solid white;
+      width: inherit;
+    }
+
+    h3.edu{
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    p.about{
+      text-align: center;
+    }
+
+    p.social {
+
+      .btn-info {
+        border: 1px solid #1f2123;
+      }
+
+      .btn-info2 {
+        background-image:  linear-gradient(#C80023,#6500BF);
+        border: 1px solid #1f2123;
+        color: white;
+        &:hover {
+          background-image: linear-gradient(#95001a,#4a008c);
+        }
+      }
+
+      .btn-muted {
+        background: #EAEAEA;
+        border: 1px solid #1f2123;
+        color: black;
+        &:hover {
+          background: #CACACA;
+          }
+        }
+    }
+
+    .me{
+      height:200px;
+      max-width: 100%;
+      border-radius: 50%;
+      margin-bottom: 5px;
+      border: 5px solid #1f2123;
+    }
+
+    h4.uni{
+      text-align: center;
+    }
+
+    p.uni{
+      text-align: center;
+    }
+
+    p.uni2{
+      text-align: center;
+      position: relative;
+      bottom: 15px;
+    }
+
+    .MoeFitness {
+      max-width: 100%;
+      height: 270px;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .main {
+    height: 350px;
+  }
+
+}
