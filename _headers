@@ -1,5 +1,4 @@
 /*
   Content-Security-Policy: default-src 'self' maxcdn.bootstrapcdn.com stackpath.bootstrapcdn.com code.jquery.com cdn.jsdelivr.net fonts.gstatic.com fonts.googleapis.com maxcdn.bootstrapcdn.com fonts.googleapis.com;
-  X-Content-Type-Options: nosniff;
   X-Frame-Options: SAMEORIGIN;
   
