@@ -1,2 +1,2 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' stackpath.bootstrapcdn.com code.jquery.com cdn.jsdelivr.net stackpath.bootstrapcdn.com; style-src 'self' maxcdn.bootstrapcdn.com fonts.googleapis.com;
+  Content-Security-Policy: default-src 'self' maxcdn.bootstrapcdn.com stackpath.bootstrapcdn.com code.jquery.com cdn.jsdelivr.net fonts.gstatic.com fonts.googleapis.com maxcdn.bootstrapcdn.com fonts.googleapis.com;
