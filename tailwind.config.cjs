@@ -12,9 +12,12 @@ module.exports = {
       secondary: "#301E67",
       tertiary: "#170d36",
       white: "#ffffff",
+      code_bg: "#24292e"
       // primary: '#271b48'
     },
-    extend: { colors: colors },
+    extend: { 
+      colors: colors
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
