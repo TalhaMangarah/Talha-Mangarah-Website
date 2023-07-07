@@ -3,39 +3,22 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import WorkInProgress from "../../components/WorkInProgress.astro";
-
-const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+// import { getCollection } from "astro:content";
+import PostCard from "../../components/PostCard.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={`${SITE_TITLE} | Blog`} description={SITE_DESCRIPTION} />
   </head>
   <body
-    class="flex h-screen min-h-full flex-row justify-center bg-primary px-4 py-4 text-white antialiased md:px-6 md:py-4"
+    class="flex overflow-y-auto h-full min-h-screen flex-row justify-center bg-primary px-4 py-4 text-white antialiased md:px-6 md:py-4"
   >
     <div class="flex w-full max-w-4xl flex-col">
       <Header />
-      <main class="flex flex-grow flex-col place-content-center">
-        <WorkInProgress />
-        <!-- <section>
-        <ul>
-          {
-            posts.map((post) => (
-              <li>
-                <FormattedDate date={post.data.pubDate} />
-                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </section> -->
+      <main class="flex flex-grow flex-col mt-2 mb-2 md:my-2">
+        <PostCard />
       </main>
       <Footer />
     </div>

@@ -6,7 +6,7 @@ type Props = HTMLAttributes<"a">;
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+const isActive = href === pathname || href === pathname.replace(/\/$/, "") || pathname.startsWith(href + "/");
 ---
 
 <a
@@ -14,7 +14,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   class:list={[
     className,
     {
-      "font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-[length:100%_1px] bg-no-repeat bg-bottom":
+      "font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-[length:100%_2px] bg-no-repeat bg-bottom":
         isActive,
     },
   ]}
