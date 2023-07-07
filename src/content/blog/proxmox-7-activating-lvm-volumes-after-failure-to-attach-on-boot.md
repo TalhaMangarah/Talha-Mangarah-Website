@@ -3,7 +3,7 @@ title: "Proxmox 7 - Activating LVM volumes after failure to attach on boot"
 description: "Activating LVM volumes after failure to attach on boot for Proxmox 7"
 pubDate: "Aug 22 2021"
 heroImage: "/assets/posts/proxmox-20210822/2021-08-22-boot-error-messages.jpg"
-categories: self-hosted, proxmox 
+categories: self-hosted, proxmox
 ---
 I had an issue with Proxmox 7 (kernel version 5.11) where the LVM volumes don't get activated properly at boot. Therefore to attach them, I have to manually do it after boot.
 
