@@ -1,2 +1,3 @@
 # talhamangarah.com
-Personal website
+
+Personal website built with Astro & Tailwind, hosted on Vercel.
