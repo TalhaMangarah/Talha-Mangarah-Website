@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import { Icon } from 'astro-icon'
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
 import FormattedDate from "./FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
@@ -9,22 +10,45 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <section>
-    <ul>
-        {
-            posts.map((post) => (
-                <a href={`/blog/${post.slug}/`}>
-                <div class="mb-4 flex w-full max-w-4xl flex-col place-content-center items-center justify-center p-0.5 hover:p-0.25 hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 hover:rounded-2xl">
-                <div class="my-auto flex w-full max-w-4xl flex-col place-content-center items-center justify-center gap-4 rounded-2xl bg-tertiary p-6 text-base drop-shadow-2xl">
-                        <li class="w-full place-content-center items-center justify-center text-center text-base">
-                            {post.data.heroImage && (<img src={post.data.heroImage} class="h-auto max-w-full rounded-lg my-4" loading="lazy" decoding="async" alt="" />)}
-                            <h2 class="md:text-2xl text-xl my-8 font-extrabold">{post.data.title}</h2>
-                            <p class="flex justify-center items-center mb-1 space-x-1 text-sm md:text-base font-semibold"><span class="inline-flex"><Icon name="lucide:calendar" width={24} height={24}/></span><FormattedDate date={post.data.pubDate} /></p>
-                            {post.data.description && (<p class="md:text-xl text-base font-normal">{post.data.description}</p>)}
-                        </li>
-                </div>
-                </div>
-                </a>
-            ))
-        }
-    </ul>
+  <ul>
+    {
+      posts.map((post) => (
+        <a href={`/blog/${post.slug}/`}>
+          <div class="hover:p-0.25 mb-4 flex w-full max-w-4xl flex-col place-content-center items-center justify-center p-0.5 hover:rounded-2xl hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500">
+            <div class="my-auto flex w-full max-w-4xl flex-col place-content-center items-center justify-center gap-4 rounded-2xl bg-tertiary p-6 text-base drop-shadow-2xl">
+              <li class="w-full place-content-center items-center justify-center text-center text-base">
+                {post.data.heroImage && (
+                  <Image
+                    src={post.data.heroImage}
+                    class="my-4 h-auto max-w-full rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                    alt=""
+                  />
+                )}
+                <h2 class="my-8 text-xl font-extrabold md:text-2xl">
+                  {post.data.title}
+                </h2>
+                <p class="mb-1 flex items-center justify-center space-x-1 text-sm font-semibold md:text-base">
+                  <>
+                    <span class="inline-flex">
+                      <Icon name="lucide:calendar" width={24} height={24} />
+                    </span>
+                    <FormattedDate date={post.data.pubDate} />
+                  </>
+                </p>
+                {post.data.description && (
+                  <p class="text-base font-normal md:text-xl">
+                    {post.data.description}
+                  </p>
+                )}
+              </li>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </ul>
 </section>
